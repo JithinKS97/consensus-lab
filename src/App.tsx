@@ -1,8 +1,10 @@
-import { Button } from '@chakra-ui/react'
+import Nodes from './components/nodes';
 
 function App() {
   return (
-    <Button>Start</Button>
+    <Nodes
+      nos={10}
+    />
   )
 }
 
