@@ -6,5 +6,5 @@ export interface IPos {
 export interface INode {
     pos: IPos;
     color: string;
-    id: number | string;
+    id: number;
 }
