@@ -1,3 +1,3 @@
-# Conensus lab
+# Conensus playground
 
-A project to visualize consensus algorithms.
+A visualization playground to study various consensus protocols and compare them.
