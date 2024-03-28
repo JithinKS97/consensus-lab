@@ -1,19 +1,18 @@
 import { Box } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { Pos } from "../interface";
+import { INode } from "../interface";
 
 interface Props {
-  pos: Pos;
-  color?: string;
+  node: INode;
 }
 
 function Node(props: Readonly<Props>) {
-  const { pos, color } = props;
+  const { node } = props;
   const size = 20;
 
   const shiftedPos = {
-    x: pos.x - size / 2,
-    y: pos.y - size / 2,
+    x: node.pos.x - size / 2,
+    y: node.pos.y - size / 2,
   }
 
   return (
@@ -22,7 +21,7 @@ function Node(props: Readonly<Props>) {
         style={{
           width: `${size}px`,
           height: `${size}px`,
-          backgroundColor: color,
+          backgroundColor: node.color,
           borderRadius: "100%",
         }}
       ></Box>

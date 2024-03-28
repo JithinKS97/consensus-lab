@@ -1,7 +1,23 @@
-import { Pos } from "../interface";
+import { INode } from "../interface";
 
-export const generateInitialPositionsOfNodes = (noOfNodes:number) => {  
-    const initialPositions:Array<Pos> = [];
+export const getSenderNode = () => {
+    const center = {
+        x: window.innerWidth / 2 - 5,
+        y: window.innerHeight / 2 - 5,
+    }
+
+    const initialConfig = {
+        pos: center,
+        color: "#ED64A6",
+        id: 0,
+    }
+
+    return initialConfig;
+
+}
+
+export const getNodes = (noOfNodes:number) => {  
+    const nodes:Array<INode> = [];
 
     const center = {
         x: window.innerWidth / 2,
@@ -16,8 +32,15 @@ export const generateInitialPositionsOfNodes = (noOfNodes:number) => {
         const x = center.x + radius * Math.cos(angle);
         const y = center.y + radius * Math.sin(angle);
 
-        initialPositions.push({ x, y });
+        const pos = { x, y }
+        const initialConfig = {
+            pos,
+            color: "#81E6D9",
+            id: i + 1,
+        }
+
+        nodes.push(initialConfig);
     }
 
-    return initialPositions;
+    return nodes;
 }

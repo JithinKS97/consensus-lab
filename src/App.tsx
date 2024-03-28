@@ -1,23 +1,27 @@
 import { useEffect, useState } from "react";
 import Nodes from "./components/nodes";
 import Node from "./components/node";
-import { generateInitialPositionsOfNodes } from "./utils";
-import { Pos } from "./interface";
+import { getNodes, getSenderNode } from "./utils";
+import { INode } from "./interface";
 
 function App() {
-  const [initialPositions, setInitialPositions] = useState<Array<Pos>>([]);
+  const [nodes, setNodes] = useState<Array<INode>>([]);
+  const [senderNode, setSenderNode] = useState<INode>({ pos: { x: 0, y: 0 }, color: "", id: 0 });
 
   useEffect(() => {
-    const _initialPositions = generateInitialPositionsOfNodes(10);
-    setInitialPositions(_initialPositions);
+    const nodes = getNodes(10);
+    setNodes(nodes);
+    const senderNode = getSenderNode();
+    setSenderNode(senderNode);
   }, []);
 
   return (
     <>
-      <Nodes color="#81E6D9" pos={initialPositions} />
+      <Nodes
+        nodes={nodes}
+      />
       <Node
-        color="#ED64A6"
-        pos={{ x: window.innerWidth / 2, y: window.innerHeight / 2 }}
+        node={senderNode}
       />
     </>
   );

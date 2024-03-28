@@ -1,18 +1,17 @@
 import Node from "../node";
-import { Pos } from "../../interface";
+import { INode } from "../../interface";
 
 interface Props {
-  pos: Array<Pos>;
-  color?: string;
+  nodes: Array<INode>;
 }
 
 function Nodes(props: Readonly<Props>) {
-  const { pos, color } = props;
+  const { nodes } = props;
 
   return (
     <>
-      {pos.map((pos, index) => (
-        <Node color={color} key={index} pos={pos} />
+      {nodes.map((node) => (
+        <Node key={node.id} node={node}/>
       ))}
     </>
   );
