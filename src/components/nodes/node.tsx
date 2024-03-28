@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { INode } from "../interface";
+import { INode } from "../../interface";
 
 interface Props {
   node: INode;

@@ -1,4 +1,4 @@
-import Node from "../node";
+import Node from "./node";
 import { INode } from "../../interface";
 
 interface Props {

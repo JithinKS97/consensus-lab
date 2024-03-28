@@ -1,6 +1,6 @@
 import { INode } from "../interface";
 
-export const defaultSenderNode = { pos: { x: 0, y: 0 }, color: "", id: 0 };
+export const defaultSenderNode = { pos: { x: 0, y: 0 }, color: "", id: 0, state: "" };
 
 export const getSenderNode = () => {
     const center = {
@@ -12,10 +12,10 @@ export const getSenderNode = () => {
         pos: center,
         color: "#ED64A6",
         id: 0,
+        state: ""
     }
 
     return initialConfig;
-
 }
 
 export const getNodes = (noOfNodes:number) => {  
@@ -39,6 +39,7 @@ export const getNodes = (noOfNodes:number) => {
             pos,
             color: "#81E6D9",
             id: i + 1,
+            state: ""
         }
 
         nodes.push(initialConfig);
