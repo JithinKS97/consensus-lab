@@ -1,5 +1,7 @@
 import { INode } from "../interface";
 
+export const defaultSenderNode = { pos: { x: 0, y: 0 }, color: "", id: 0 };
+
 export const getSenderNode = () => {
     const center = {
         x: window.innerWidth / 2 - 5,
