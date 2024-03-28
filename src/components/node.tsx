@@ -4,10 +4,11 @@ import { Pos } from "../interface";
 
 interface Props {
   pos: Pos;
+  color?: string;
 }
 
 function Node(props: Readonly<Props>) {
-  const { pos } = props;
+  const { pos, color } = props;
   const size = 20;
 
   const shiftedPos = {
@@ -21,7 +22,7 @@ function Node(props: Readonly<Props>) {
         style={{
           width: `${size}px`,
           height: `${size}px`,
-          backgroundColor: "red",
+          backgroundColor: color,
           borderRadius: "100%",
         }}
       ></Box>
